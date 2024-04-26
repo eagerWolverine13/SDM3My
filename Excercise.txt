@@ -1,0 +1,177 @@
+Kindly write any 10 programs.
+1. Write a Shell Script to find maximum between two numbers.
+#!/bin/bash
+
+echo "Enter the first number:"
+read num1
+
+echo "Enter the second number:"
+read num2
+
+if [ $num1 -gt $num2 ]; then
+    echo "Maximum number is: $num1"
+else
+    echo "Maximum number is: $num2"
+fi
+
+2. Write a Shell Script to find maximum between three numbers.
+#!/bin/bash
+
+echo "Enter the first number:"
+read num1
+
+echo "Enter the second number:"
+read num2
+
+echo "Enter the third number:"
+read num3
+
+max=$num1
+
+if [ $num2 -gt $max ]; then
+    max=$num2
+fi
+
+if [ $num3 -gt $max ]; then
+    max=$num3
+fi
+
+echo "Maximum number is: $max"
+
+3. Write a Shell Script to check whether a number is negative, positive or zero.
+#!/bin/bash
+
+echo "Enter a number:"
+read num
+
+case $num in
+    0)
+        echo "Number is zero";;
+    *)
+        if [ $num -gt 0 ]; then
+            echo "Number is positive"
+        else
+            echo "Number is negative"
+        fi;;
+esac
+
+4. Write a Shell Script to check whether a number is divisible by 5 and 11 or not.
+#!/bin/bash
+
+echo "Enter a number:"
+read num
+
+if [ $((num % 5)) -eq 0 ] && [ $((num % 11)) -eq 0 ]; then
+    echo "Number is divisible by both 5 and 11"
+else
+    echo "Number is not divisible by both 5 and 11"
+fi
+
+5. Write a Shell Script to check whether a number is even or odd.
+#!/bin/bash
+
+echo "Enter a number:"
+read num
+
+if [ $((num % 2)) -eq 0 ]; then
+    echo "Number is even"
+else
+    echo "Number is odd"
+fi
+
+6. Write a Shell Script to check whether a year is leap year or not.
+#!/bin/bash
+
+echo "Enter a year:"
+read year
+
+if [ $((year % 4)) -eq 0 ] && [ $((year % 100)) -ne 0 ] || [ $((year % 400)) -eq 0 ]; then
+    echo "Leap year"
+else
+    echo "Not a leap year"
+fi
+
+7. Shell Script to print number between 1 to 10 in character format using switch-case.
+#!/bin/bash
+
+echo "Enter a number between 1 to 10:"
+read num
+
+case $num in
+    1) echo "One";;
+    2) echo "Two";;
+    3) echo "Three";;
+    4) echo "Four";;
+    5) echo "Five";;
+    6) echo "Six";;
+    7) echo "Seven";;
+    8) echo "Eight";;
+    9) echo "Nine";;
+    10) echo "Ten";;
+    *) echo "Invalid number";;
+esac
+
+8. Shell Script to accept id from user to confirm department using switch-case.
+#!/bin/bash
+
+echo "Enter your ID:"
+read id
+
+case $id in
+    "EMP001") echo "You belong to the HR department";;
+    "EMP002") echo "You belong to the Finance department";;
+    "EMP003") echo "You belong to the IT department";;
+    *) echo "Invalid ID";;
+esac
+
+9. Shell Script to check password is correct or incorrect using switch-case.
+#!/bin/bash
+
+password="password123"  # Define the correct password
+
+echo "Enter your password:"
+read user_password
+
+case $user_password in
+    "$password") echo "Correct password";;
+    *) echo "Incorrect password";;
+esac
+
+10. Shell Script to print day of week using switch-case.
+#!/bin/bash
+
+echo "Enter a number (1-7) representing the day of the week:"
+read day
+
+case $day in
+    1) echo "Sunday";;
+    2) echo "Monday";;
+    3) echo "Tuesday";;
+    4) echo "Wednesday";;
+    5) echo "Thursday";;
+    6) echo "Friday";;
+    7) echo "Saturday";;
+    *) echo "Invalid day";;
+esac
+
+11. Shell Script to create calculator using switch-case.
+#!/bin/bash
+
+echo "Enter first number:"
+read num1
+
+echo "Enter second number:"
+read num2
+
+echo "Choose operation (+, -, *, /):"
+read operation
+
+case $operation in
+    "+") echo "Result: $(($num1 + $num2))";;
+    "-") echo "Result: $(($num1 - $num2))";;
+    "*") echo "Result: $(($num1 * $num2))";;
+    "/") echo "Result: $(($num1 / $num2))";;
+    *) echo "Invalid operation";;
+esac
+
+
